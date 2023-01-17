@@ -2,7 +2,7 @@
   <div class="header">
     <div class="container">
       <div class="logo">
-        <img src="/public/img/logo.png" alt="logo">
+        <img src="/public/img/logo.svg" alt="logo">
         <span>Creation web-technology</span>
       </div>
       <div class="nav">
