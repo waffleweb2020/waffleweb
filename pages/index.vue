@@ -28,8 +28,11 @@ function test(event) {
     isWheel.value = false
     event.deltaY > 0? ++block.value : --block.value
   }
-  if(block.value < 1 || block.value > 2) {
+  if(block.value < 1) {
     block.value = 1
+  }
+  if(block.value > 2) {
+    block.value = 2
   }
   setTimeout(() => {
     isWheel.value = true
