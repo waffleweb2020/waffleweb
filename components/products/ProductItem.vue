@@ -94,6 +94,8 @@ const detailsDB = ref([
 ])
 
 const details = computed<{id: number, productId: number, plan: string, items: string[]}[]>(() => detailsDB.value.filter(detail => detail.productId === props.item.id))
+
+onBeforeUnmount(() => isOpened.value = false)
 </script>
 
 <style lang="scss" scoped>

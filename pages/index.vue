@@ -5,11 +5,11 @@
     </transition>
 
       <transition name="slide-fade">
-        <Promo v-show="block <= 1"/>
+        <Promo v-if="block <= 1"/>
       </transition>
 
       <transition name="slide-fade">
-        <ProductItems v-show="block === 2"/>
+        <ProductItems v-if="block === 2"/>
       </transition>
 
   </div>
