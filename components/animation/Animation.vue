@@ -30,9 +30,10 @@ const returnLetters = computed(() => letters.value.slice(0, props.index))
     z-index: 1;
     span {
       font-size: 48px;
+      font-family: "Ubuntu";
     }
   }
   .color-letter {
-    color: violet;
+    color: #4D0049;
   }
 </style>

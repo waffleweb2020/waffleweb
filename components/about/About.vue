@@ -14,7 +14,9 @@
           <div class="arrow"></div>
         </div>
 
-        <div class="gif"></div>
+        <div class="gif">
+          <img :src="card.gif" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -30,19 +32,19 @@ const about = ref([
       'Бонусом, вы получаете разработанную под ваши интересы админную панель, включающую создание контента и аналитики',
       'Вы получаете проект, адекватно отображающийся на всех основных видах экранах - мониторах, планшетах и мобильных телефонов ',
       'Если Вы нуждаетесь в небольшом функционале, хорошим аналогом на сегодняшний день являются телеграм-боты, создаваемые нами под ваши нужды'
-    ]},
+    ], gif: '/img/web-development.gif'},
   {title:'Мы создаём SPA-приложения:', subtitles: [
       'навигация по сайту осуществляется без перезагрузки страницы',
       'происходит экономия трафика до 78%*',
       'повышается качество пользовательского опыта',
       'работа с сайтом становится в 2.3 раза быстрее'
-    ]},
+    ], gif: '/img/giphy.gif'},
   {title:'Вы экономите ваше время и деньги:', subtitles: [
       'Оплата происходит после сдачи проектов, указанных в договоре',
       'Весь процесс разработки с первого дня располагается на сервере, где Вы сможете контролировать работу',
       'Среднее время выполнения заказа - 27 дней',
       'Любые правки и корректировки документируются, что исключает навязывание дополнительных услуг пост-фактум'
-    ]},
+    ],gif: '/img/giphy2.gif'},
 ])
 
 const index = ref(0)
@@ -77,13 +79,14 @@ function setIndex() {
       animation-name: showInfo;
       animation-duration: 1s;
       animation-fill-mode: forwards;
+      row-gap: 35px;
     }
     &:before {
       content: 'Что вы получаете?';
       display: block;
       position: absolute;
-      border-top: 2px solid #fff;
-      border-bottom: 2px solid #fff;
+      border-top: 2px solid #4D0049;
+      border-bottom: 2px solid #4D0049;
       width: 100%;
       height: 40px;
       top: 0;
@@ -126,8 +129,8 @@ function setIndex() {
         content: "";
         display: block;
         position: absolute;
-        border-right: 2px solid #fff;
-        border-left: 2px solid #fff;
+        border-right: 2px solid #4D0049;
+        border-left: 2px solid #4D0049;
         width: 1%;
         top: 0;
         height: 100%;
@@ -141,7 +144,7 @@ function setIndex() {
         height: 900px;
         background: url("/img/pattern.svg");
         border-radius: 50%;
-        border: 3px solid #fff;
+        border: 2px solid #4D0049;
         left: -20%;
         top: 44px;
         animation-name: rotateCircle;
@@ -207,6 +210,11 @@ function setIndex() {
     border-radius: 30px;
     border: 3px solid #fff;
     overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .number {
