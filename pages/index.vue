@@ -12,6 +12,11 @@
         <ProductItems v-if="block === 2"/>
       </transition>
 
+      <transition name="slide-fade">
+        <About v-if="block === 3"/>
+      </transition>
+
+
   </div>
 </template>
 
@@ -21,6 +26,7 @@ import Promo from "~/components/promo/Promo.vue";
 import {ref} from "@vue/reactivity";
 import Animation from "~/components/animation/Animation.vue";
 import ProductItems from "~/components/products/ProductItems.vue";
+import About from "~/components/about/About.vue";
 const block = ref(1)
 
 function test(event) {
@@ -31,8 +37,8 @@ function test(event) {
   if(block.value < 1) {
     block.value = 1
   }
-  if(block.value > 2) {
-    block.value = 2
+  if(block.value > 3) {
+    block.value = 3
   }
   setTimeout(() => {
     isWheel.value = true
@@ -56,7 +62,6 @@ onMounted(() => {
     index.value++
   },100)
 })
-
 </script>
 
 <style lang="scss" scoped>
@@ -65,7 +70,7 @@ onMounted(() => {
   }
 
   .slide-fade-enter-active {
-    transition: all 0.3s ease-out;
+    transition: all 0.8s;
   }
 
   .slide-fade-leave-active {
