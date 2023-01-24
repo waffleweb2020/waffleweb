@@ -7,9 +7,9 @@
       </div>
       <div class="nav">
         <ul class="nav-list">
-          <li class="nav-item">Главная</li>
-          <li class="nav-item">О нас</li>
-          <li class="nav-item">Создаём</li>
+          <li class="nav-item"><nuxt-link to="/">Главная</nuxt-link></li>
+          <li class="nav-item"><nuxt-link to="/about">О нас</nuxt-link></li>
+          <li class="nav-item"><nuxt-link to="/create">Создаём</nuxt-link></li>
           <li class="nav-item">Портфолио</li>
           <li class="nav-item">Контакты</li>
         </ul>

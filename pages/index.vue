@@ -1,23 +1,13 @@
 <template>
-  <div @wheel="test($event)" class="page">
-    <transition name="slide-fade">
-      <Animation v-if="!isLoaded" :index="index"/>
-    </transition>
-
+  <transition name="home">
+    <div @wheel="test($event)" class="page">
       <transition name="slide-fade">
-        <Promo v-if="block <= 1"/>
+        <Animation v-if="!isLoaded" :index="index"/>
       </transition>
 
-      <transition name="slide-fade">
-        <ProductItems v-if="block === 2"/>
-      </transition>
-
-      <transition name="slide-fade">
-        <About v-if="block === 3"/>
-      </transition>
-
-
-  </div>
+      <Promo/>
+    </div>
+  </transition>
 </template>
 
 
@@ -27,22 +17,12 @@ import {ref} from "@vue/reactivity";
 import Animation from "~/components/animation/Animation.vue";
 import ProductItems from "~/components/products/ProductItems.vue";
 import About from "~/components/about/About.vue";
-const block = ref(1)
+import {useRouter} from "vue-router";
+
+const router = useRouter()
 
 function test(event) {
-  if(isWheel.value) {
-    isWheel.value = false
-    event.deltaY > 0? ++block.value : --block.value
-  }
-  if(block.value < 1) {
-    block.value = 1
-  }
-  if(block.value > 3) {
-    block.value = 3
-  }
-  setTimeout(() => {
-    isWheel.value = true
-  },1000)
+  event.deltaY > 0? router.push('/about') : null
 }
 
 const index = ref(0)
@@ -50,7 +30,7 @@ const isLoaded = ref(false)
 const isWheel = ref(true)
 
 const create = ref(false)
-
+const transition = 'fade'
 onMounted(() => {
   create.value = true
   const id = setInterval(() => {
@@ -83,6 +63,18 @@ onMounted(() => {
   }
   .slide-fade-enter-from,
   .slide-fade-leave-to {
+    opacity: 0;
+  }
+
+  .page-enter-active,
+  .page-leave-active {
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 5000ms;
+  }
+
+  .page-enter,
+  .page-leave-to {
     opacity: 0;
   }
 </style>

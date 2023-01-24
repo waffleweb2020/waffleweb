@@ -2,8 +2,13 @@
 export default defineNuxtConfig({
     ssr: false,
     css: [
-        'assets/css/normalize.css'
+        'assets/css/normalize.css',
+        'assets/main.css'
     ],
+    plugins: [
+        { src: '~/plugins/aos', mode: 'client' },
+    ],
+    modules: ['nuxt-swiper'],
     app: {
         head: {
             charset: 'utf-16',

@@ -8,13 +8,16 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "nuxt": "^3.0.0",
     "sass": "^1.57.1",
     "sass-loader": "10"
   },
   "dependencies": {
     "@nuxtjs/svg": "^0.4.0",
+    "aos": "^2.3.4",
     "axios": "^1.2.2",
+    "nuxt-swiper": "^0.1.9",
     "vue-styled-components": "^1.6.0"
   }
 }
