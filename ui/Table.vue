@@ -37,6 +37,7 @@
   animation-name: translateShadow;
   animation-duration: 10s;
   animation-iteration-count: infinite;
+  box-sizing: border-box;
   .panel {
     border-color: inherit;
     height: 100%;
@@ -63,7 +64,8 @@
     }
   }
   .window {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     position: absolute;
     height: 100%;
     width: 100%;

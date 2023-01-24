@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     ],
     modules: ['nuxt-swiper'],
     app: {
+        pageTransition: { name: 'page', mode: 'default'},
+
         head: {
             charset: 'utf-16',
             viewport: 'width=500, initial-scale=1',

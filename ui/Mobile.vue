@@ -38,6 +38,9 @@
   animation-name: translateShadow;
   animation-duration: 10s;
   animation-iteration-count: infinite;
+  @media screen and (max-width: 767px){
+    width: 90%;
+  }
   .panel {
     border-top: 5px solid;
     border-color: inherit;

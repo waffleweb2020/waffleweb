@@ -36,6 +36,7 @@
     animation-name: translateShadow;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    box-sizing: border-box;
     .panel {
       border-top: 5px solid;
       border-color: inherit;

@@ -31,6 +31,7 @@
         <li>Любые правки и корректировки документируются, что <span>исключает навязывание</span> дополнительных услуг пост-фактум</li>
       </ul>
 
+      <nuxt-link to="/create">Дальше</nuxt-link>
     </div>
     <div class="footer"></div>
   </div>
@@ -46,7 +47,7 @@ export default {
 .display {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 1fr 50px;
+  grid-template-rows: 50px max-content max-content 50px;
   padding: 10px;
   gap: 20px;
   .header {

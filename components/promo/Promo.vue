@@ -76,6 +76,14 @@ function removeStyleClass() {
       height: 100%;
       right: 0;
       top: 0;
+      @media screen and (max-width: 768px) {
+        position: absolute;
+        height: 80%;
+        width: 100%;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 
@@ -86,6 +94,11 @@ function removeStyleClass() {
     justify-content: center;
     gap: 30px;
     width: 50%;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
   }
   .title {
     position: relative;
@@ -94,6 +107,9 @@ function removeStyleClass() {
       font-style: normal;
       font-weight: 400;
       font-size: 96px;
+      @media screen and (max-width: 768px) {
+        font-size: 62px;
+      }
     }
     &:after {
       width: 0%;
@@ -112,6 +128,9 @@ function removeStyleClass() {
       font-style: normal;
       font-weight: 400;
       font-size: 42px;
+      @media screen and (max-width: 768px) {
+        font-size: 35px;
+      }
     }
   }
 
@@ -137,16 +156,24 @@ function removeStyleClass() {
     transition: 0.5s;
     &:first-child {
       top: 0;
-      width: 544px;
-      height: 544px;
+      width: calc(30vmax + 100px);
+      height: calc(30vmax + 100px);
       border-radius: 50%;
+      @media screen and (max-width: 1920px) {
+        width: calc(10vmax + 350px);
+        height: calc(10vmax + 350px);
+      }
     }
     &:last-child {
       bottom: 0;
       right: 0;
-      width: 444px;
-      height: 444px;
+      width: calc(20vmax + 100px);
+      height: calc(20vmax + 100px);
       border-radius: 50%;
+      @media screen and (max-width: 1920px) {
+        width: calc(10vmax + 250px);
+        height: calc(10vmax + 250px);
+      }
     }
   }
   @keyframes rotateColor {

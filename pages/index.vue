@@ -49,32 +49,15 @@ onMounted(() => {
     height: 100vh;
   }
 
-  .slide-fade-enter-active {
-    transition: all 0.8s;
-  }
-
-  .slide-fade-leave-active {
-    transition: all 0.8s
-  }
-
-  .slide-fade-enter-to,
-  .slide-fade-leave-from {
-    opacity: 1;
-  }
-  .slide-fade-enter-from,
-  .slide-fade-leave-to {
-    opacity: 0;
-  }
-
-  .page-enter-active,
-  .page-leave-active {
-    transition-property: opacity;
-    transition-timing-function: ease-in-out;
-    transition-duration: 5000ms;
-  }
-
-  .page-enter,
-  .page-leave-to {
-    opacity: 0;
-  }
+  //.page-enter-active,
+  //.page-leave-active {
+  //  transition-property: opacity;
+  //  transition-timing-function: ease-in-out;
+  //  transition-duration: 2000ms;
+  //}
+  //
+  //.page-enter,
+  //.page-leave-to {
+  //  opacity: 0;
+  //}
 </style>

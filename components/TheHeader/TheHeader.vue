@@ -36,6 +36,7 @@
     display: block;
     position: relative;
     font-family: 'Sofia Sans', sans-serif;
+    font-size: 1.6rem;
     &:before {
       display: block;
       content: "";
@@ -53,6 +54,7 @@
     &-list {
       display: flex;
       gap: 30px;
+      font-size: 1.6rem;
     }
     &-item {
       font-family: 'Sofia Sans', sans-serif;

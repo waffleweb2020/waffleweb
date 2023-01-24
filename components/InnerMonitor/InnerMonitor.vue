@@ -15,7 +15,7 @@
         </li>
       </ul>
     </div>
-    <div class="main" data-aos="fade-left" data-aos-duration="1500">
+    <div class="main">
       <p class="subtitle">Мы создаем весь цикл разработки:</p>
       <ul>
         <li>Обсуждая с Вами, мы разрабатываем <span>дизайн Вашего проекта</span> </li>
@@ -37,10 +37,10 @@ export default {
 <style lang="scss">
   .display {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr 1fr 50px;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px max-content max-content 50px;
     padding: 10px;
-    gap: 20px;
+    gap: 50px;
     .header {
       grid-column: 1/3;
       border-radius: 10px;
