@@ -1,5 +1,5 @@
 <template>
-  <div @mousemove="move($event)" class="items">
+  <div @mousemove="move($event)" class="items page">
     <div class="container">
       <div class="grid">
         <ProductItem v-for="item of products" :key="item.title" :item="item"/>

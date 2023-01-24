@@ -10,7 +10,7 @@ import TheHeader from "~/components/TheHeader/TheHeader.vue";
 
 </script>
 
-<style scoped>
+<style>
   .app {
     height: 100vh;
     overflow: hidden;
