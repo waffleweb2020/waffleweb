@@ -15,9 +15,7 @@
   },
   "dependencies": {
     "@nuxtjs/svg": "^0.4.0",
-    "aos": "^2.3.4",
     "axios": "^1.2.2",
-    "nuxt-swiper": "^0.1.9",
-    "vue-styled-components": "^1.6.0"
+    "nuxt-swiper": "^0.1.9"
   }
 }

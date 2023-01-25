@@ -55,9 +55,32 @@
       display: flex;
       gap: 30px;
       font-size: 1.6rem;
+      @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        font-size: 2.6rem;
+      }
     }
     &-item {
       font-family: 'Sofia Sans', sans-serif;
+    }
+    @media screen and (max-width: 1024px) {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      width: 100%;
+      background: #000;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 1s;
+    }
+    &-active {
+      @media screen and (max-width: 1024px) {
+        left: 0%;
+      }
     }
   }
 </style>

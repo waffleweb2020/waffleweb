@@ -18,12 +18,12 @@
     <div class="promo-circles">
       <div :style="{
         transform: `translate(${-x/30}px, ${-y/30}px)`,
-        background: `linear-gradient(${degrees}deg, rgba(243, 175, 0, 0.55) 0%, rgba(173, 173, 173, 0) 100%)`
+
       }"
       class="circle"></div>
       <div :style="{
         transform: `translate(${x/30}px, ${y/30}px)`,
-        background: `linear-gradient(${360 - degrees}deg, #34D1F3 0%, rgba(217, 217, 217, 0) 100%)`
+
       }" class="circle"></div>
     </div>
   </div>

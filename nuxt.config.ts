@@ -3,18 +3,13 @@ export default defineNuxtConfig({
     ssr: false,
     css: [
         'assets/css/normalize.css',
-        'assets/main.css'
-    ],
-    plugins: [
-        { src: '~/plugins/aos', mode: 'client' },
     ],
     modules: ['nuxt-swiper'],
     app: {
-        pageTransition: { name: 'page', mode: 'default'},
+        pageTransition: { name: 'page', mode: 'in-out'},
 
         head: {
             charset: 'utf-16',
-            viewport: 'width=500, initial-scale=1',
             title: 'WaffleWeb - разработка сайтов',
             meta: [
                 // <meta name="description" content="My amazing site">

@@ -1,13 +1,11 @@
 <template>
-  <transition name="home">
     <div @wheel="test($event)" class="page">
-<!--      <transition name="slide-fade">-->
-<!--        <Animation v-if="!isLoaded" :index="index"/>-->
-<!--      </transition>-->
-
+      <transition name="slide-fade">
+        <Animation v-if="!isLoaded" :index="index"/>
+      </transition>
+      <div style="color: #2BB3C0; width: 370px; height: 50px"></div>
       <Promo/>
     </div>
-  </transition>
 </template>
 
 
