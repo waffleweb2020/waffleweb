@@ -1,11 +1,13 @@
 <template>
   <div class="header">
     <div class="container">
+
       <div class="logo">
         <img src="/public/img/logo.svg" alt="logo">
         <span>Creation web-technology</span>
       </div>
-      <div class="nav">
+
+      <div :class="{'nav-active': isBurgerActive}" class="nav">
         <ul class="nav-list">
           <li class="nav-item"><nuxt-link to="/">Главная</nuxt-link></li>
           <li class="nav-item"><nuxt-link to="/about">О нас</nuxt-link></li>
@@ -14,12 +16,18 @@
           <li class="nav-item">Контакты</li>
         </ul>
       </div>
+
+      <div @click="isBurgerActive = !isBurgerActive" :class="{'burger-active':isBurgerActive}" class="burger">
+        <span></span>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {ref} from "@vue/reactivity";
 
+const isBurgerActive = ref(false)
 </script>
 
 <style lang="scss" scoped>
@@ -80,6 +88,54 @@
     &-active {
       @media screen and (max-width: 1024px) {
         left: 0%;
+      }
+    }
+  }
+  .burger {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    display: none;
+    @media screen and (max-width: 1024px) {
+      display: block;
+    }
+    span,&:after,&:before {
+      display: block;
+      height: 5px;
+      background: #fff;
+      border-radius: 2px;
+      transition: 1s;
+    }
+    &:after,&:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform-origin: center;
+    }
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+    &-active {
+      span {
+        opacity: 0;
+      }
+      &:before {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(135deg);
+        left: 50%;
+      }
+      &:after {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
       }
     }
   }

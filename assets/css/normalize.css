@@ -367,6 +367,8 @@ h1 {
     width: 100%;
     margin: 0 auto;
     height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 1920px) {

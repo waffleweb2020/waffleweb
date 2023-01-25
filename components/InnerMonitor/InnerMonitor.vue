@@ -37,10 +37,10 @@ export default {
 <style lang="scss">
   .display {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: 50px max-content max-content 50px;
     padding: 10px;
-    gap: 50px;
+    row-gap: 50px;
     .header {
       grid-column: 1/3;
       border-radius: 10px;
@@ -81,7 +81,6 @@ export default {
         span {
           font-size: 2.0rem;
           color: #2BB3C0;
-          font-family: fantasy;
         }
       }
     }

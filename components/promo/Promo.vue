@@ -1,5 +1,5 @@
 <template>
-  <div @mousemove="move($event)" class="promo">
+  <div @touchmove="touchMove($event)" @touchstart="startMove($event)" @mousemove="move($event)" class="promo">
     <div class="container">
       <div class="info">
         <div :class="{'active-title':isStyleClass}" class="title">
@@ -18,11 +18,13 @@
     <div class="promo-circles">
       <div :style="{
         transform: `translate(${-x/30}px, ${-y/30}px)`,
+        background: `linear-gradient(${degrees}deg, rgba(243, 175, 0, 0.55) 0%, rgba(173, 173, 173, 0) 100%)`
 
       }"
       class="circle"></div>
       <div :style="{
         transform: `translate(${x/30}px, ${y/30}px)`,
+        background: `linear-gradient(${360 - degrees}deg, #34D1F3 0%, rgba(217, 217, 217, 0) 100%)`
 
       }" class="circle"></div>
     </div>
@@ -32,13 +34,16 @@
 <script setup lang="ts">
 
 import {ref} from "@vue/reactivity";
+import {useRouter} from "vue-router";
 
 const x = ref(0)
 const y = ref(0)
 
+
 const isStyleClass = ref(false)
 
 const degrees = ref(0)
+const router = useRouter()
 
 function rotateDegree() {
   setInterval(()=>{
@@ -64,6 +69,16 @@ function removeStyleClass() {
   isStyleClass.value = false
 }
 
+function startMove(event) {
+  x.value = event.touches[0].clientX
+  console.log(x.value)
+}
+
+function touchMove(event) {
+  if(event.touches[0].clientX < x.value) {
+    router.push('/about')
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -173,6 +188,9 @@ function removeStyleClass() {
       @media screen and (max-width: 1920px) {
         width: calc(10vmax + 250px);
         height: calc(10vmax + 250px);
+      }
+      @media screen and (max-width: 585px) {
+        right: -30%;
       }
     }
   }

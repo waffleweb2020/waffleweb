@@ -2,7 +2,7 @@
   <div @mousemove="move($event)" class="items page">
     <div class="container">
       <div class="grid">
-        <ProductItem v-for="item of products" :key="item.title" :item="item"/>
+        <ProductItem v-for="(item,i) of products" :key="item.title" :item="item"/>
       </div>
     </div>
     <div :style="{
@@ -45,10 +45,21 @@ function move(event) {
   }
   .grid {
     display: grid;
-    grid-template-columns: 300px 1fr 1fr 300px;
-    grid-auto-rows: 1fr 1fr 1fr;
+    grid-template-areas: 'a b b b c' 'd d d e c';
     gap: 20px;
     height: 75%;
+    @media screen and (max-width: 767px) {
+      grid-template-areas:
+        "a a b b"
+        "d d e e"
+        "c c c c";
+    }
+    @media screen and (max-width: 585px) {
+      display: flex;
+      flex-direction: column;
+      overflow: scroll;
+      box-shadow: 1px 15px 60px #4d0049;
+    }
   }
 
   .circle {

@@ -1,5 +1,5 @@
 <template>
-  <div @click="isOpened = true" class="card">
+  <div @click="isOpened = true" :style="{gridArea: '_abcde'[item.id]}" class="card" >
     <div class="title">{{item.title}}</div>
     <p class="subtitle">{{item.subtitle}}</p>
   </div>
@@ -110,6 +110,7 @@ onBeforeUnmount(() => isOpened.value = false)
     position: relative;
     overflow: hidden;
     transition: 1s;
+    flex-shrink: 0;
     &:hover {
       transform: scale(1.2);
       z-index: 2;
@@ -129,19 +130,6 @@ onBeforeUnmount(() => isOpened.value = false)
       transition: 1s;
       font-size: 25px;
       font-family: "Ubuntu";
-    }
-    &:nth-child(1) {
-      grid-row: 1;
-    }
-    &:nth-child(2) {
-      grid-row: 1;
-      grid-column: 2/4;
-    }
-    &:nth-child(3) {
-      grid-column: 1/3;
-    }
-    &:nth-child(5) {
-      grid-row: 1/3;
     }
   }
   .title {
@@ -178,6 +166,9 @@ onBeforeUnmount(() => isOpened.value = false)
       z-index: 2;
       position: relative;
       width: 60%;
+      @media screen and (max-width: 1024px) {
+        width: 95%;
+      }
     }
     &-bg {
       position: absolute;
@@ -194,6 +185,12 @@ onBeforeUnmount(() => isOpened.value = false)
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     position: relative;
+    @media screen and (max-width: 1024px) {
+      overflow: scroll;
+      flex-direction: column;
+      display: flex;
+      height: 80vh;
+    }
     &-classic {
       position: absolute;
       display: block;
@@ -220,6 +217,7 @@ onBeforeUnmount(() => isOpened.value = false)
       gap: 15px;
       box-sizing: border-box;
       position: relative;
+      flex-shrink: 0;
       &-pro {
         background-image: linear-gradient( #141414,  #141414), linear-gradient(180deg, #9E0674 0%, #007D85 100%);
       }
@@ -259,6 +257,10 @@ onBeforeUnmount(() => isOpened.value = false)
         -webkit-text-fill-color: transparent;
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;
+        @media screen and (max-width: 767px){
+          font-size: 19px;
+          text-align: center;
+        }
       }
     }
     &-list {

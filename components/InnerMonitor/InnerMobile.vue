@@ -30,17 +30,15 @@
 
         <li>Любые правки и корректировки документируются, что <span>исключает навязывание</span> дополнительных услуг пост-фактум</li>
       </ul>
-
-      <nuxt-link to="/create">Дальше</nuxt-link>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <nuxt-link to="/create"> <UiButton/> </nuxt-link>
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "InnerMonitor"
-}
+<script setup lang="ts">
+import UiButton from '~/ui/UiButton.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +47,10 @@ export default {
   grid-template-columns: 1fr;
   grid-template-rows: 50px max-content max-content 50px;
   padding: 10px;
-  gap: 20px;
+  row-gap: 20px;
+  @media screen and (max-width: 585px) {
+    grid-template-rows: 50px max-content max-content 90px;
+  }
   .header {
     grid-column: 1/3;
     border-radius: 10px;
@@ -127,5 +128,9 @@ export default {
       height: 100%;
     }
   }
+}
+.footer {
+  grid-row: 4;
+  justify-self: center;
 }
 </style>

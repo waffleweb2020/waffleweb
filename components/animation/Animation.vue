@@ -31,6 +31,9 @@ const returnLetters = computed(() => letters.value.slice(0, props.index))
     span {
       font-size: 48px;
       font-family: "Ubuntu";
+      @media screen and (max-width: 585px) {
+        font-size: 27px;
+      }
     }
   }
   .color-letter {
