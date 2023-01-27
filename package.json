@@ -5,7 +5,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+     "start": "export `cat env/.prod-env` && nuxt start",
+    "ypm2": "pm2 start --name 'waffleweb' 'yarn start' "
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
