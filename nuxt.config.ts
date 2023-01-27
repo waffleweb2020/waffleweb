@@ -7,7 +7,13 @@ export default defineNuxtConfig({
     modules: ['nuxt-swiper'],
     app: {
         pageTransition: { name: 'page', mode: 'in-out'},
-
+        {
+            name: 'NuxtAppName',
+            exec_mode: 'cluster',
+            instances: 'max', // Or a number of instances
+            script: './node_modules/nuxt/bin/nuxt.js',
+            args: 'start'
+        },
         head: {
             charset: 'utf-16',
             title: 'WaffleWeb - разработка сайтов',
