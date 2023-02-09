@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-<!--    <transition name="slide-fade">-->
-<!--      <Animation v-if="!isLoaded" :index="index"/>-->
-<!--    </transition>-->
+    <transition name="slide-fade">
+      <Animation v-if="!isLoaded" :index="index"/>
+    </transition>
     <TheHeader/>
     <slot/>
   </div>

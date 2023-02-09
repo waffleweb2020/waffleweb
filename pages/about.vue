@@ -83,7 +83,7 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         isTransition.value = true
-      },3000)
+      },1000)
     })
     return {
       modules: [EffectCube, Pagination, SwiperMousewheel],
