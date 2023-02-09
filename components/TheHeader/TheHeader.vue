@@ -3,7 +3,7 @@
     <div class="container">
 
       <div class="logo">
-        <img src="/public/img/logo.svg" alt="logo">
+        <img src="/img/logo.svg" alt="logo">
         <span>Creation web-technology</span>
       </div>
 
