@@ -77,7 +77,7 @@ function toggleInput(title: string) {
 }
 
 async function sendData() {
-  await axios.post('http://62.217.182.246:3000/user', {
+  await axios.post('http://62.217.182.246:3001/user', {
     name: name.value,
     number: phone.value || null,
     email: email.value || null,
