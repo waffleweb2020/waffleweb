@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     modules: ['nuxt-swiper'],
     app: {
         pageTransition: { name: 'page', mode: 'in-out'},
-
         head: {
             charset: 'utf-16',
             title: 'WaffleWeb - разработка сайтов',
