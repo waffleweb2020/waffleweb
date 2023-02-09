@@ -90,7 +90,12 @@
       border-radius: 10px;
       left: 0;
       &::-webkit-scrollbar {
-        display: none;
+        width: 10px;
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #2bb3c0;
+        border-radius: 20px;
       }
     }
   }

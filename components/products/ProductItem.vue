@@ -27,9 +27,7 @@
 
           <span class="detail-item-price">{{detail.price}}</span>
 
-          <button class="button">
-            Связаться
-          </button>
+          <UiButton @click.native="useRouter().push('/contacts')" theme="light" :style="{justifySelf:'center'}"/>
         </div>
       </div>
     </div>
@@ -39,6 +37,7 @@
 
 <script setup lang="ts">
 import {ref} from "@vue/reactivity";
+import UiButton from "~/ui/UiButton.vue";
 
 const props = defineProps<{item: {id: number, title: string, subtitle: string}}>()
 
@@ -112,7 +111,7 @@ onBeforeUnmount(() => isOpened.value = false)
     transition: 1s;
     flex-shrink: 0;
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
       z-index: 2;
     }
     &:after {
@@ -300,24 +299,4 @@ onBeforeUnmount(() => isOpened.value = false)
       }
     }
   }
-  .button {
-    border: 1px solid #fff;
-    width: 170px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border-radius: 30px;
-    transition: 1s;
-    justify-self: center;
-    align-self: center;
-    font-family: "Ubuntu";
-    &:hover {
-      background: #fff;
-      border: 1px solid #100e0e;
-      color: #100e0e;
-    }
-  }
-
 </style>

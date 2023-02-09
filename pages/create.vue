@@ -1,98 +1,37 @@
 <template>
-  <ProductItems/>
+  <div class="create" @wheel="transition($event)">
+    <ProductItems/>
+  </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import ProductItems from "~/components/products/ProductItems.vue";
+import {useRouter} from "vue-router";
+import {ref} from "@vue/reactivity";
 
-export default {
-  name: "create",
-  components: {ProductItems},
-  transition: "intro"
+const router = useRouter()
+const isTransition = ref(false)
+
+function transition(event) {
+  if(event.deltaY > 0 && isTransition.value){
+    router.push('/contacts')
+  }
+  else if(event.deltaY < 0 && isTransition.value) {
+    router.push('/about')
+  }
+  else {
+    return
+  }
 }
+onMounted(() => {
+  setTimeout(() => {
+    isTransition.value = true
+  },1000)
+})
 </script>
 
 <style lang="scss">
-$t-duration: 800ms;
-$t-delay: 300ms;
-
-.intro-enter-active,
-.intro-leave-active {
-  transition-duration: $t-duration * 2;
-
-  &::before,
-  &::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    display: block;
-    width: 100%;
-    height: 50%;
-    transition-property: opacity, transform;
-    transition-timing-function: ease-in-out;
-  }
-
-  &::before {
-    background-color: #2e2e2e;
-  }
-
-  &::after {
-    top: 50%;
-    background-color: #2e2e2e;
-  }
-}
-
-.intro-leave {
-  &::before,
-  &::after {
-    transform: scaleX(0);
-  }
-}
-
-.intro-leave-active {
-  &::before {
-    transition-duration: $t-duration;
-  }
-
-  &::after {
-    transition-duration: $t-duration - $t-delay;
-    transition-delay: $t-delay;
-  }
-}
-
-.intro-leave-to {
-  &::before,
-  &::after {
-    transform: scale(1);
-    transform-origin: left;
-  }
-}
-
-.intro-enter {
-  &::before,
-  &::after {
-    transform: scaleX(1);
-  }
-}
-
-.intro-enter-active {
-  &::before {
-    transition-duration: $t-duration;
-  }
-
-  &::after {
-    transition-duration: $t-duration - $t-delay;
-    transition-delay: $t-delay;
-  }
-}
-
-.intro-enter-to {
-  &::before,
-  &::after {
-    transform: scaleX(0);
-    transform-origin: right;
-  }
+.create {
+  height: 100%;
 }
 </style>

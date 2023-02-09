@@ -39,7 +39,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px max-content max-content 50px;
-    padding: 10px;
+    padding: 20px;
     row-gap: 50px;
     .header {
       grid-column: 1/3;

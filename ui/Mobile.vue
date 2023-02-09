@@ -27,7 +27,8 @@
 .monitor {
   background: transparent;
   position: absolute;
-  width: 30%;
+  max-width: 400px;
+  width: 100%;
   bottom: 10%;
   height: 80%;
   transform: translateX(-50%);

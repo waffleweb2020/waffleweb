@@ -1,4 +1,5 @@
 <template>
+  <div @wheel.self="transition($event)" class="about">
     <swiper
         :effect="'cube'"
         :grabCursor="true"
@@ -28,6 +29,7 @@
         <Mobile> <InnerMobile/> </Mobile>
       </swiper-slide>
     </swiper>
+  </div>
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -40,7 +42,6 @@ import InnerMobile from "~/components/InnerMonitor/InnerMobile.vue";
 import {ref} from "@vue/reactivity";
 import {useRouter} from "vue-router";
 
-// Import Swiper styles
 import "swiper/css";
 
 import "swiper/css/effect-cube";
@@ -60,30 +61,51 @@ export default {
     Mobile,
     InnerMonitor,
     InnerTable,
-    InnerMobile
+    InnerMobile,
   },
   setup() {
     const index = ref(0)
     const router = useRouter ()
+    const isTransition = ref(false)
+
+    function transition(event) {
+      if(event.deltaY > 0 && isTransition.value){
+        router.push('/create')
+      }
+      else if(event.deltaY < 0 && isTransition.value) {
+        router.push('/')
+      }
+      else {
+        return
+      }
+    }
+
+    onMounted(() => {
+      setTimeout(() => {
+        isTransition.value = true
+      },3000)
+    })
     return {
       modules: [EffectCube, Pagination, SwiperMousewheel],
+      transition
     };
   },
 };
 </script>
 
 <style lang="scss">
+@keyframes show {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 .about {
   position: relative;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #F7B100 0%, #FF5858 100%);
-  }
+  height: 100%;
+  animation-name: show;
+  animation-duration: 1s;
 }
 </style>

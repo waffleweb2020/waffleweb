@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { KinesisContainer, KinesisElement } from 'vue-kinesis'
 export default {
   name: "InnerMonitor"
 }
@@ -38,7 +39,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 80px;
   grid-template-rows: 50px 1fr 1fr 50px;
-  padding: 10px;
+  padding: 20px;
   gap: 20px;
   .header {
     grid-column: 1/2;
@@ -103,16 +104,6 @@ export default {
     & span {
       color: #2BB3C0;
       position: relative;
-      &:before {
-        content: '';
-        display: block;
-        width: 100%;
-        background: #2BB3C0;
-        height: 2px;
-        position: absolute;
-        top: 105%;
-        left: 0;
-      }
     }
   }
 

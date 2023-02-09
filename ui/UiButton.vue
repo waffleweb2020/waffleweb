@@ -1,26 +1,63 @@
 <template>
-  <button class="button">Связаться</button>
+  <button :class="className" class="button">{{title}}</button>
 </template>
 
-<script>
+<script setup lang="ts">
+import {ref} from "@vue/reactivity";
 
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'Связаться'
+  },
+  theme: {
+    type: String,
+    default: () => 'light'
+  }
+})
+
+const className = ref('button-light')
+const themes = ref([
+  {title: 'light', className: 'button-light'},
+  {title: 'dark', className: 'button-dark'},
+])
+onMounted(() => {
+  const theme = themes.value.find(theme => theme.title === props.theme)
+  if(theme) {
+    className.value = theme.className
+  }
+})
 </script>
 
 <style lang="scss" scoped>
 .button {
-  border: 1px solid #fff;
-  width: 170px;
-  height: 40px;
+  padding: 10px 30px;
+  width: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
   border-radius: 30px;
   transition: 1s;
-&:hover {
-   background: #fff;
-   border: 1px solid #100e0e;
-   color: #100e0e;
- }
+  font-size: 18px;
+  font-family: 'Ubuntu';
+  &-light {
+    background: #fff;
+    border: 1px solid #100e0e;
+    color: #100e0e;
+    &:hover {
+      background: #232323;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+  &-dark{
+    border: 1px solid #fff;
+    background: #232323;
+    &:hover {
+      background: #fff;
+      border: 1px solid #100e0e;
+      color: #100e0e;
+    }
+  }
 }
 </style>

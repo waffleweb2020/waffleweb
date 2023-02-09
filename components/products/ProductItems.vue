@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import ProductItem from "~/components/products/ProductItem.vue";
 import {ref} from "@vue/reactivity";
-
 const products = ref([
   {id: 1, title: 'Интернет-магазин', subtitle:'Расширьте границы вашего бизнеса, реализовав классический функционал интернет-магазина'},
   {id: 2, title: 'CMS (система управления контентом)', subtitle:'Замена типовых CMS на собственную, спроектированную под ваши интересы и потребности'},

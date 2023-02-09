@@ -1,5 +1,5 @@
 <template>
-  <div @touchmove="touchMove($event)" @touchstart="startMove($event)" @mousemove="move($event)" class="promo">
+  <div @touchend="touchMove($event)" @touchstart="startMove($event)" @mousemove="move($event)" class="promo">
     <div class="container">
       <div class="info">
         <div :class="{'active-title':isStyleClass}" class="title">
@@ -8,11 +8,11 @@
           </h1>
         </div>
         <div class="subtitle"> <h2>Выводим ваш бизнес на новый уровнь</h2></div>
-        <button
-            @mouseenter="addStyleClass"
-            @mouseleave="removeStyleClass"
-            class="button"
-        >Связаться</button>
+        <UiButton
+            @mouseenter.native="addStyleClass"
+            @mouseleave.native="removeStyleClass"
+            theme="light"
+        />
       </div>
       </div>
     <div class="promo-circles">
@@ -35,6 +35,7 @@
 
 import {ref} from "@vue/reactivity";
 import {useRouter} from "vue-router";
+import UiButton from "~/ui/UiButton.vue";
 
 const x = ref(0)
 const y = ref(0)
@@ -75,7 +76,7 @@ function startMove(event) {
 }
 
 function touchMove(event) {
-  if(event.touches[0].clientX < x.value) {
+  if(event.changedTouches[0].clientX < x.value) {
     router.push('/about')
   }
 }
@@ -149,23 +150,6 @@ function touchMove(event) {
     }
   }
 
-  .button {
-    border: 1px solid #fff;
-    width: 170px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border-radius: 30px;
-    transition: 1s;
-    &:hover {
-      background: #fff;
-      border: 1px solid #100e0e;
-      color: #100e0e;
-    }
-  }
-
   .circle {
     position: absolute;
     transition: 0.5s;
@@ -175,8 +159,8 @@ function touchMove(event) {
       height: calc(30vmax + 100px);
       border-radius: 50%;
       @media screen and (max-width: 1920px) {
-        width: calc(10vmax + 350px);
-        height: calc(10vmax + 350px);
+        width: calc(15vmax + 350px);
+        height: calc(15vmax + 350px);
       }
     }
     &:last-child {
@@ -186,8 +170,8 @@ function touchMove(event) {
       height: calc(20vmax + 100px);
       border-radius: 50%;
       @media screen and (max-width: 1920px) {
-        width: calc(10vmax + 250px);
-        height: calc(10vmax + 250px);
+        width: calc(15vmax + 250px);
+        height: calc(15vmax + 250px);
       }
       @media screen and (max-width: 585px) {
         right: -30%;

@@ -32,7 +32,7 @@
       </ul>
     </div>
     <div class="footer">
-      <nuxt-link to="/create"> <UiButton/> </nuxt-link>
+      <nuxt-link to="/create"> <UiButton title="Наши услуги"/> </nuxt-link>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ import UiButton from '~/ui/UiButton.vue'
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50px max-content max-content 50px;
-  padding: 10px;
+  padding: 10px 20px 50px 20px;
   row-gap: 20px;
   @media screen and (max-width: 585px) {
     grid-template-rows: 50px max-content max-content 90px;

@@ -1,9 +1,5 @@
 <template>
     <div @wheel="test($event)" class="page">
-      <transition name="slide-fade">
-        <Animation v-if="!isLoaded" :index="index"/>
-      </transition>
-      <div style="color: #2BB3C0; width: 370px; height: 50px"></div>
       <Promo/>
     </div>
 </template>
@@ -16,11 +12,12 @@ import Animation from "~/components/animation/Animation.vue";
 import ProductItems from "~/components/products/ProductItems.vue";
 import About from "~/components/about/About.vue";
 import {useRouter} from "vue-router";
+import VueKinesis from "vue-kinesis";
 
 const router = useRouter()
-
+const isTransition = ref(false)
 function test(event) {
-  event.deltaY > 0? router.push('/about') : null
+  event.deltaY > 0 && isTransition.value ? router.push('/about') : null
 }
 
 const index = ref(0)
@@ -39,6 +36,10 @@ onMounted(() => {
     }
     index.value++
   },100)
+
+  setTimeout(() => {
+    isTransition.value = true
+  },3000)
 })
 </script>
 
@@ -47,15 +48,16 @@ onMounted(() => {
     height: 100vh;
   }
 
-  //.page-enter-active,
-  //.page-leave-active {
-  //  transition-property: opacity;
-  //  transition-timing-function: ease-in-out;
-  //  transition-duration: 2000ms;
-  //}
-  //
-  //.page-enter,
-  //.page-leave-to {
-  //  opacity: 0;
-  //}
+  .slide-fade-enter-active,
+  .slide-fade-leave-active {
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1000ms;
+  }
+
+  .slide-fade-enter,
+  .slide-fade-enter-to,
+  .slide-fade-leave-to {
+    opacity: 0;
+  }
 </style>

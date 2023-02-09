@@ -3,6 +3,10 @@ export default defineNuxtConfig({
     ssr: false,
     css: [
         'assets/css/normalize.css',
+        'assets/main.css',
+    ],
+    plugins: [
+        'plugins/vue-the-mask.js'
     ],
     modules: ['nuxt-swiper'],
     app: {
@@ -19,8 +23,8 @@ export default defineNuxtConfig({
                 {rel: "preconnect", href: "https://fonts.googleapis.com"},
                 { rel : "preconnect", href: "https://fonts.googleapis.com"},
                 { href: "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap", rel: "stylesheet" },
-                { href: "https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap", rel: "stylesheet" }
-            ]
+                { href: "https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap", rel: "stylesheet" },
+            ],
         },
     },
 })
