@@ -352,7 +352,7 @@ body {
     background: #100e0e;
 }
 * {
-    color: #fff;
+    color: inherit;
     margin: 0;
     padding: 0;
 }

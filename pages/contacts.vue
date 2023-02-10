@@ -101,7 +101,7 @@ function test(event) {
   .contact {
     position: relative;
     height: 100%;
-    padding: 50px;
+    padding: 80px;
     box-sizing: border-box;
     &:before {
       content: '';
@@ -127,8 +127,8 @@ function test(event) {
       content: "КОНТАКТЫ";
       display: block;
       position: absolute;
-      color: black;
-      -webkit-text-fill-color: #100e0e;
+      color: #232323;
+      -webkit-text-fill-color: #232323;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: rgb(255 255 255 / 18%);
       font-size: 248px;
@@ -138,7 +138,7 @@ function test(event) {
     }
   }
   .info {
-    background: #100e0e;
+    background: #232323;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -147,6 +147,7 @@ function test(event) {
       font-size: 40px;
       font-weight: 300;
       text-align: center;
+      color: #fff;
     }
   }
   .inputs-block {
@@ -163,7 +164,7 @@ function test(event) {
     height: 40%;
     width: 100%;
     font-size: 24px;
-    color: #0f0e0e;
+    color: #232323;
   }
   .input-wrap {
     position: relative;
@@ -194,13 +195,13 @@ function test(event) {
     }
   }
   input {
-    color: #0f0e0e;
+    color: #232323;
     padding: 10px;
     box-sizing: border-box;
   }
   textarea {
     grid-area: t;
-    color: #0f0e0e;
+    color: #232323;
     resize: none;
     padding: 10px;
     box-sizing: border-box;

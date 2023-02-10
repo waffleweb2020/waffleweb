@@ -7,7 +7,6 @@
     </div>
     <div :style="{
         transform: `translateX(${x/10}px`,
-        background: `linear-gradient(${degrees}deg, rgba(243, 175, 0, 0.55) 0%, rgba(173, 173, 173, 0) 100%)`
       }" class="circle"></div>
   </div>
 </template>

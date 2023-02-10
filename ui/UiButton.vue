@@ -40,24 +40,5 @@ onMounted(() => {
   transition: 1s;
   font-size: 18px;
   font-family: 'Ubuntu';
-  &-light {
-    background: #fff;
-    border: 1px solid #100e0e;
-    color: #100e0e;
-    &:hover {
-      background: #232323;
-      border: 1px solid #fff;
-      color: #fff;
-    }
-  }
-  &-dark{
-    border: 1px solid #fff;
-    background: #232323;
-    &:hover {
-      background: #fff;
-      border: 1px solid #100e0e;
-      color: #100e0e;
-    }
-  }
 }
 </style>

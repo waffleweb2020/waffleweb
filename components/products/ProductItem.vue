@@ -99,7 +99,6 @@ onBeforeUnmount(() => isOpened.value = false)
 
 <style lang="scss" scoped>
   .card {
-    background: url("/img/bg-product.svg") no-repeat center/cover;
     border: 2px solid #4D0049;
     border-radius: 30px;
     padding: 20px;

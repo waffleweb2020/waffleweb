@@ -12,8 +12,8 @@
           <li class="nav-item"><nuxt-link to="/">Главная</nuxt-link></li>
           <li class="nav-item"><nuxt-link to="/about">О нас</nuxt-link></li>
           <li class="nav-item"><nuxt-link to="/create">Создаём</nuxt-link></li>
-          <li class="nav-item">Портфолио</li>
-          <li class="nav-item">Контакты</li>
+          <li class="nav-item"><nuxt-link to="/contacts">Контакты</nuxt-link></li>
+          <li class="nav-item"><div @click="toggle" class="toggle-button"></div></li>
         </ul>
       </div>
 
@@ -26,7 +26,11 @@
 
 <script setup lang="ts">
 import {ref} from "@vue/reactivity";
-
+const props = defineProps({
+  toggle: {
+    type: Function
+  }
+})
 const isBurgerActive = ref(false)
 </script>
 

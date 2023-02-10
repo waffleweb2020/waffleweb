@@ -62,7 +62,6 @@ import UiButton from '~/ui/UiButton.vue'
     padding: 10px;
     border: 2px solid #61234E;
     filter: drop-shadow(0px 4px 29px #61234E);
-    background: url("/img/pattern.svg") center/cover;
   }
 
   .aside {
@@ -70,7 +69,6 @@ import UiButton from '~/ui/UiButton.vue'
     border: 2px solid #2BB3C0;
     filter: drop-shadow(0px 4px 13px #61234E);
     border-radius: 20px;
-    background: url("/img/pattern.svg") center/cover;
     padding: 5px;
     font-family: "Ubuntu";
     display: flex;
