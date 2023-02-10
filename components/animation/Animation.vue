@@ -31,12 +31,13 @@ const returnLetters = computed(() => letters.value.slice(0, props.index))
     span {
       font-size: 48px;
       font-family: "Ubuntu";
+      color: #fff;
       @media screen and (max-width: 585px) {
         font-size: 27px;
       }
     }
   }
   .color-letter {
-    color: #4D0049;
+    color: #a4015d !important;
   }
 </style>
