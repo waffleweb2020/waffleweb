@@ -30,7 +30,6 @@
     width: 100%;
     bottom: 10%;
     height: 90%;
-    border: 10px solid #fff;
     border-radius: 20px;
     grid-area: g;
     animation-name: translateShadow;
@@ -38,21 +37,17 @@
     animation-iteration-count: infinite;
     box-sizing: border-box;
     .panel {
-      border-top: 5px solid;
-      border-color: inherit;
       width: 100%;
       height: 46px;
       position: absolute;
       bottom: 0;
       left: 0px;
       box-sizing: border-box;
-      background: #100e0e;
       &:before {
         content: '';
         display: block;
         width: 10px;
         height: 10px;
-        background: #fff;
         border-radius: 50%;
         position: absolute;
         left: 50%;

@@ -77,20 +77,20 @@ function toggleInput(title: string) {
 }
 
 async function sendData() {
-  await axios.post('http://62.217.182.246:3001/user', {
-    name: name.value,
-    number: phone.value || null,
-    email: email.value || null,
-    comment: comment.value
-  }).then(resp => {
-    name.value = ''
-    phone.value = ''
-    email.value = ''
-    comment.value = ''
-    success.value = 'Мы с Вами свяжемся в ближайшее время'
-  }).catch(e => {
-    errors.value = [...e.response.data]
-  }).finally(() => isLoading.value = false)
+    await axios.post('http://62.217.182.246:3001/user', {
+      name: name.value,
+      number: phone.value || '',
+      email: email.value || '',
+      comment: comment.value
+    }).then(resp => {
+      name.value = ''
+      phone.value = ''
+      email.value = ''
+      comment.value = ''
+      success.value = 'Мы с Вами свяжемся в ближайшее время'
+    }).catch(e => {
+      errors.value = [...e.response.data]
+    }).finally(() => isLoading.value = false)
 }
 function test(event) {
   console.log(event)

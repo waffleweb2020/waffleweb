@@ -30,7 +30,6 @@
   width: 100%;
   bottom: 10%;
   height: 90%;
-  border: 10px solid #fff;
   border-radius: 20px;
   grid-area: g;
   z-index: 4;
@@ -49,13 +48,11 @@
     position: absolute;
     bottom: 0;
     box-sizing: border-box;
-    background: #100e0e;
     &:before {
       content: '';
       display: block;
       width: 10px;
       height: 10px;
-      background: #fff;
       border-radius: 50%;
       position: absolute;
       left: 50%;

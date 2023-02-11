@@ -33,7 +33,6 @@
   height: 80%;
   transform: translateX(-50%);
   left: 50%;
-  border: 10px solid #fff;
   border-radius: 20px;
   grid-area: g;
   animation-name: translateShadow;
@@ -51,13 +50,11 @@
     bottom: 0;
     left: 0px;
     box-sizing: border-box;
-    background: #100e0e;
     &:before {
       content: '';
       display: block;
       width: 10px;
       height: 10px;
-      background: #fff;
       border-radius: 50%;
       position: absolute;
       left: 50%;
