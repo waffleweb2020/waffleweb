@@ -1,440 +1,306 @@
-        <!DOCTYPE html>
-        <html lang="en" style="font-size: 6px; font-family: sans-serif; margin: 0; padding: 0; color: #fff;">
-        <head>
-            <meta charset="UTF-8">
-            <title>Title</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-            <style>
-                a {
-                    text-decoration: none;
-                }
-                .info {
-                    text-align: center;
-                    margin-top: 87px;
-                }
-                .info h1 {
-                    font-size: 6.4rem;
-                }
-                .info h2 {
-                    font-size: 4rem;
-                    margin-top: 16px;
-                }
-                .about {
-                    position: relative;
-                }
-                .about h3 {
-                    font-size: 4rem;
-                }
-                .about p {
-                    font-size: 2.4rem;
-                    margin-top: 20px;
-                }
-                .about::after {
-                    content: '';
-                    display: block;
-                    background: #494949;
-                    position: absolute;
-                    width: 800px;
-                    height: 800px;
-                    border-radius: 50%;
-                    top: 0;
-                    right: -20%;
-                    z-index: 1;
-                }
-                .cards {
-                    border-spacing: 3px;
-                    margin-top: 43px;
-                }
-                .card {
-                    background: url("https://af.attachmail.ru/cgi-bin/readmsg/Webb+Dark+Pattern.png?x-email=kostya.pasechnik@inbox.ru&rid=193160594031016021649653119403787539552&&id=16757492741901655312%3B0%3B3&project=cloud&x-email=kostya.pasechnik%40inbox.ru") no-repeat center/cover;
-                    font-size: 2.4rem;
-                    text-align: center;
-                    width: 288px;
-                    height: 155px;
-                    display: table-cell;
-                    vertical-align: middle;
-                    overflow: hidden;
-                    border-radius: 20px;
-                    border: 1px solid;
-                    position: relative;
-                }
-                .card::after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    opacity: 0;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: #232323;
-                    transition: 1s;
-                    z-index: 1;
-                }
-                .card:hover:after {
-                    opacity: 1;
-                }
-                .card span {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    opacity: 0;
-                    transition: 1s;
-                    font-size: 2rem;
-                    z-index: 2;
-                }
-                .card:hover span {
-                    opacity: 1;
-                }
-                .banner {
-                    background: url("https://af.attachmail.ru/cgi-bin/readmsg/Frame+8.png?x-email=kostya.pasechnik@inbox.ru&rid=240669905475803924936159562003874501191&&id=16757492741901655312%3B0%3B1&project=cloud&x-email=kostya.pasechnik%40inbox.ru") no-repeat center/cover;
-                    padding: 72px 0;
-                    text-align: center;
-                    margin-top: 52px;
-                }
-                .banner span {
-                    font-size: 4.8rem;
-                    margin-left: 2vw;
-                }
-                .contacts-table {
-                    height: 531px;
-                    overflow: hidden;
-                    border-radius: 20px;
-                    width: 100%;
-                    filter: drop-shadow(0px 4px 23px #000000);
-                }
-                .contacts-table td {
-                    width: 50%;
-                }
-                .form {
-                    padding: 40px;
-                }
-                .form .button-wrap {
-                    text-align: end;
-                    margin: 100px 0 0 0;
-                    color: #232323;
-                }
-                .form .btn:hover {
-                    color: #fff;
-                    background: #232323;
-                }
-                .form-title {
-                    background: #232323;
-                    font-size: 3.6rem;
-                    padding: 30% 20px;
-                    box-sizing: border-box;
-                }
-                .button-wrap {
-                    margin: 5vmax;
-                    text-align: center;
-                    color: #fff;
-                }
-                .btn {
-                    padding: 1.5rem 3.3rem;
-                    border: 1px solid #565656;
-                    border-radius: 41px;
-                    font-size: 2.4rem;
-                    display: inline-block;
-                    color: inherit;
-                }
-                .btn:hover {
-                    color: #232323;
-                    background: #fff;
-                }
-                .form-control {
-                    font-size: 20px !important;
-                    margin-top: 15px;
-                }
-                .form-label {
-                    font-size: 12px;
-                    color: #232323 !important;
-                }
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="margin: 0; padding: 0">
+<div style="margin: 0;
+    padding: 0;
+    background: radial-gradient(101.93% 101.93% at 49.36% 44.22%, #FFFFFF 15.92%, #AEAEAE 100%);
+    color: #232323;
+    font-family: monospace;">
+    <div style="
+    background: url(https://i.ibb.co/VgMscZL/circles.png) right/contain no-repeat;">
+        <div style="
+        height: 50px;
+        padding: 0 50px;
+        filter: invert(0.8);"
+        >
+            <img src="https://i.ibb.co/G5H5kgT/logo.png" alt="">
+        </div>
+        <div class="container"
+             style="
+             max-width: 1200px;
+             width: 100%;
+             margin: 0 auto;
+             padding: 150px 10px 50px 10px;
+             height: 70vh;
+             text-align: center;">
+            <h1 style="color: inherit; font-size: 64px; margin: 0">Разработка web-решений</h1>
+            <h2 style="color: inherit; font-size: 40px; margin: 50px 0px 0px 0px; padding: 0">Выводим ваш бизнес на новый уровнь</h2>
+            <a href="http://waffle-web.ru:3000"
+               target="_blank"
+               style="
+               padding: 10px 30px;
+               width: -moz-max-content;
+               width: max-content;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               border-radius: 30px;
+               transition: 1s;
+               background: #232323;
+               color: #fff;
+               text-decoration: none;
+               margin: 50px auto;
+               font-size: 18px;">Связаться с нами
+            </a>
+        </div>
+    </div>
 
-                @media screen and (max-width: 1024px){
-                    html {
-                        font-size: 8px;
-                    }
-                }
+    <div style="
+         max-width: 1200px;
+         width: 100%;
+         margin: 0 auto;
+         text-align: center;"
+    >
+        <div>
+            <p style="font-size: 20px; color: inherit">Добрый день! Мы - WaffleWeb, веб-студия, занимающаяся созданием
+                эффективных интернет-продуктов, способных повысить качество Вашего бизнеса.
+            </p>
 
-                @media screen and (max-width: 767px){
-                    html {
-                        font-size: 6px;
-                    }
+            <p style="font-size: 20px; color: inherit; margin-top: 20px;">Совместно с Вами, мы разрабатываем дизайн и функционал, позволяющий
+                Вам продуктивно работать с Вашими клиентами и увеличить прибыль Вашего дела.
+            </p>
 
-                    .cards {
-                        text-align: center;
-                        margin: 43px auto;
-                    }
-                    .cards td {
-                        display: block;
-                        width: 100%;
-                    }
+            <p style="font-size: 20px; color: inherit; margin-top: 20px;">Вы получаете Single-Page Application - продукт, совмещающий
+                интернет-сайт и веб-приложение, загружающиеся только один раз, ускоряя работу пользователя в 2.5 раза и сохраняя трафик
+                до 78%. Также, мы предлагаем бонус к каждому продукту - админную панель, созданную под Ваши интересы и позволяющую Вам управлять
+                содержимым Вашего сайта и получать базовую аналитику.
+            </p>
 
-                    .contacts-table td {
-                        display: block;
-                        width: 100%;
-                    }
-                }
+            <p style="font-size: 20px; color: inherit; margin-top: 20px;">Спроектированные и выпущенные продукты способны адаптироваться
+                под все основные виды экранов - мониторы, планшеты и телефоны.
+            </p>
 
-                @media screen and (max-width: 585px){
-                    html {
-                        font-size: 4px;
-                    }
-                }
-            </style>
-        </head>
-        <body>
-            <div class="page" style="background: linear-gradient(180deg, #232323 55.53%, #33023C 100%); overflow: hidden">
-                <div class="promo block" style="padding: 36px 0; border-bottom: 1px solid #484646; min-height: 70vh;">
-                    <div
-                    style="
-                        max-width: 1200px;
-                        width: 100%;
-                        margin: 0 auto;
-                        padding: 0 10px;
-                        box-sizing: border-box;
-                        z-index: 2;
-                        position: relative;"
-                    >
-                        <div style="text-align: center;"><img src="https://beamish-bonbon-c8b113.netlify.app/_nuxt/logo.9ff496b0.svg" alt=""></div>
-                        <div style="text-align: center; margin-top: 87px;">
-                            <h1 style="font-size: 52px; color: #fff;">Разработка веб-решений</h1>
-                            <h2 style="font-size: 32px; color: #fff;  margin-top: 16px">Создаем условия для развития Вашего бизнеса</h2>
-                            <div class="button-wrap" style="color: #fff; margin-top: 5vmax; text-align: center; color: #fff;">
-                                <a class="btn" style="
-                                    padding: 12px 26px;
-                                    border: 1px solid #565656;
-                                    border-radius: 41px;
-                                    font-size: 19px;
-                                    display: inline-block;
-                                    color: inherit;" href="#form"
-                                >Связаться с нами</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <p style="font-size: 20px; color: inherit; margin-top: 20px;">Мы предлагаем широкий спектор услуг по разработке от телеграм-ботов
+                до интернет-магазинов и корпоративных сайтов, средний чек по которым составляет 55 999 рублей.
+            </p>
+        </div>
 
-                <div class="about block" style="position: relative; padding: 36px 0; border-bottom: 1px solid #484646; min-height: 70vh;">
+        <table style="border-spacing: 25px;">
+            <tr>
+                <td>
                     <div style="
-                        max-width: 1200px;
-                        width: 100%;
-                        margin: 0 auto;
-                        padding: 0 10px;
-                        box-sizing: border-box;
-                        z-index: 2;
-                        position: relative;"
-                    >
-                        <h3 class="block-title" style="font-size: 32px; color: #fff;">Кто мы?</h3>
-                        <p class="block-text" style="font-size: 19px; margin-top: 20px; color: #fff;" >Мы web-студия, разрабатывающая веб-продукты, от автоматизирующих рутинные процессы телеграмм-ботов, до современных торговых интернет-площадок.
-                            <br><br>
-                            Наши продукты работают по принципу Single-Page Application - сайт загружается один раз и дальнейшая навигация осуществляется без перезагрузки страницы, что ускоряет время работы в 2.5 раза, а трафик экономится до 78%.
-                        </p>
-                        <table class="cards" style="border-spacing: 3px; margin-top: 43px;">
-                            <tr>
-                                <td>
-                                    <div class="card" style="background: url('https://beamish-bonbon-c8b113.netlify.app/img/pattern.svg') no-repeat center/cover;
-                                    font-size: 16px;
-                                    text-align: center;
-                                    width: 288px;
-                                    height: 155px;
-                                    display: table-cell;
-                                    vertical-align: middle;
-                                    overflow: hidden;
-                                    border-radius: 20px;
-                                    border: 1px solid;
-                                    color: #fff;
-                                    position: relative;">Телеграмм-боты <span>От 5999 рублей</span></div>
-                                </td>
-                                <td><div class="card" style="background: url('https://beamish-bonbon-c8b113.netlify.app/img/pattern.svg') no-repeat center/cover;
-                                    font-size: 16px;
-                                    text-align: center;
-                                    width: 288px;
-                                    height: 155px;
-                                    display: table-cell;
-                                    vertical-align: middle;
-                                    overflow: hidden;
-                                    border-radius: 20px;
-                                    border: 1px solid;
-                                    color: #fff;
-                                    position: relative;">Сайт-визитка <span>От 15999 рублей</span></div></td>
-                                <td><div class="card" style="background: url('https://beamish-bonbon-c8b113.netlify.app/img/pattern.svg') no-repeat center/cover;
-                                    font-size: 16px;
-                                    text-align: center;
-                                    width: 288px;
-                                    height: 155px;
-                                    display: table-cell;
-                                    vertical-align: middle;
-                                    overflow: hidden;
-                                    border-radius: 20px;
-                                    color: #fff;
-                                    border: 1px solid;
-                                    position: relative;">Интернет-магазин  <span>От 45999 рублей</span></div></td>
-                                <td><div class="card" style="background: url('https://beamish-bonbon-c8b113.netlify.app/img/pattern.svg') no-repeat center/cover;
-                                    font-size:  16px;
-                                    text-align: center;
-                                    width: 288px;
-                                    height: 155px;
-                                    display: table-cell;
-                                    vertical-align: middle;
-                                    overflow: hidden;
-                                    border-radius: 20px;
-                                    color: #fff;
-                                    border: 1px solid;
-                                    position: relative;">CMS/CRM  <span>От 35999 рублей</span></div></td>
-                            </tr>
-                        </table>
-                        <div class="button-wrap" style="color: #fff; margin: 5vmax; text-align: center; color: #fff;">
-                            <a class="btn" style="
-                                padding: 12px 26px;
-                                border: 1px solid #565656;
-                                border-radius: 41px;
-                                font-size: 19px;
-                                display: inline-block;
-                                color: inherit;" href="#form" href="https://beamish-bonbon-c8b113.netlify.app/">Связаться с нами</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="techno block" style="padding: 36px 0; border-bottom: 1px solid #484646; min-height: 70vh;">
-                    <div style="
-                        max-width: 1200px;
-                        width: 100%;
-                        margin: 0 auto;
-                        padding: 0 10px;
-                        box-sizing: border-box;
-                        z-index: 2;
-                        position: relative;"
-                    >
-                        <h3 class="block-title" style="font-size: 32px; color: #fff;">Что мы используем?</h3>
-                        <p class="block-text" style="font-size: 19px; margin-top: 20px; color: #fff;">Внешняя сторона наших проектов строятся на таких технологиях, как VueJS/NuxtJS, а при проектировании базы данных мы применяем NestJS/PostgresQL.
-                            Данный стек технологии применялся при создании:
-                        </p>
-                    </div>
-                    <div class="banner" style="
-                        background: url('https://af.attachmail.ru/cgi-bin/readmsg/Frame+8.png?x-email=kostya.pasechnik@inbox.ru&rid=240669905475803924936159562003874501191&&id=16757492741901655312%3B0%3B1&project=cloud&x-email=kostya.pasechnik%40inbox.ru') no-repeat center/cover;
-                        padding: 72px 0;
-                        text-align: center;
-                        margin-top: 52px;">
-                        <span style="font-size: 38px; margin-left: 2vw; color: #fff;">Facebook</span>
-                        <span style="font-size: 38px; margin-left: 2vw; color: #fff;">Netflix</span>
-                        <span style="font-size: 38px; margin-left: 2vw; color: #fff;">Grammarly</span>
-                        <span style="font-size: 38px; margin-left: 2vw; color: #fff;">Behance</span>
-                        <span style="font-size: 38px; margin-left: 2vw; color: #fff;">Upwork</span>
-                    </div>
-                        <div class="button-wrap" style="color: #fff; margin-top: 5vmax; text-align: center; color: #fff;">
-                            <a style="
-                                padding: 12px 26px;
-                                border: 1px solid #565656;
-                                border-radius: 41px;
-                                font-size: 16px;
-                                display: inline-block;
-                                color: inherit;
-                                " href="https://beamish-bonbon-c8b113.netlify.app/"
-                            >Добавить Ваш проект</a>
-                        </div>
-                </div>
-
-                <div id="form" class="contacts block" style="padding: 36px 0; border-bottom: 1px solid #484646; min-height: 70vh;">
-                    <div style="
-                        max-width: 1200px;
-                        width: 100%;
-                        margin: 0 auto;
-                        padding: 0 10px;
-                        box-sizing: border-box;
-                        z-index: 2;
-                        position: relative;"
-                    >
-                        <div style="
-                        height: 531px;
-                        overflow: hidden;
+                        height: 250px;
+                        width: 300px;
+                        background: url('https://i.ibb.co/6RmP7kS/bg.png') no-repeat center/cover;
+                        display: table-cell;
                         border-radius: 20px;
-                        width: 100%;
-                        position: relative;
-                        filter: drop-shadow(0px 4px 23px #000000);"
-                        >
-                            <div style="position: absolute; left: 0; width: 49.9%; height: 100%; display: inline-block; overflow: hidden;">
-                                <div class="form-title form-part" style="
-                                    background: #232323;
-                                    font-size: 28px;
-                                    padding: 30% 20px;
-                                    box-sizing: border-box;
-                                    display: inline-block;
-                                    width: 100%;
-                                    height: 100%;"
-                                >
-                                    <h3 style="
-                                    width: 190%;
-                                    position: absolute;
-                                    color: #fff;">
-                                        Оставьте Ваши контакты и мы приступим к обсуждению Вашего проекта
-                                    </h3>
-                                </div>
-                            </div>
-                            <div style="position: absolute; right: 0; width: 50%; height: 100%; display: inline-block; overflow: hidden;">
-                                <div style="
-                                    background: #fff;
-                                    display: inline-block;
-                                    width: 100%;
-                                    height: 100%;
-                                    font-size: 28px;
-                                    padding: 30% 20px;
-                                    box-sizing: border-box;
-                                    width: 100%;
-                                    height: 100%;"
-                                >
-                                    <h3 style="
-                                    width: 190%;
-                                    position: absolute;
-                                    right: 0;
-                                    color: rgb(0,0,0);">
-                                        Оставьте Ваши контакты и мы приступим к обсуждению Вашего проекта
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="button-wrap" style="
-                            color: #000000;
-                            margin-top: 5vmax;
-                            text-align: center;
-                            z-index: 1;
-                            position: absolute;
-                            bottom: 0;
-                            right: 0;
-                            "
-                            >
-                                <a style="
-                                padding: 12px 26px;
-                                border: 1px solid #565656;
-                                border-radius: 41px;
-                                font-size: 16px;
-                                display: inline-block;
-                                color: inherit;
-                                " href="https://beamish-bonbon-c8b113.netlify.app/"
-                                >Добавить Ваш проект</a>
-                            </div>
-                        </div>
+                        overflow:hidden;
+                        padding: 0 10px;
+                        box-shadow: 1px 1px 10px #232323;
+                        vertical-align: middle;">
+                        <h1>Интернет-магазин</h1>
+                        <p>Расширьте границы вашего бизнеса, реализовав классический функционал интернет-магазина</p>
+                        <p>от 35 999 рублей</p>
                     </div>
-                </div>
-            </div>
+                </td>
+                <td>
+                    <div style="
+                        height: 250px;
+                        width: 300px;
+                        background: url('https://i.ibb.co/6RmP7kS/bg.png') no-repeat center/cover;
+                        display: table-cell;
+                        border-radius: 20px;
+                        overflow:hidden;
+                        padding: 0 10px;
+                        box-shadow: 1px 1px 10px #232323;
+                        vertical-align: middle;">
+                        <h1>Телеграм-боты</h1>
+                        <p>Современный аналог веб-сайтом, совмещающий функционал интернет-магазина</p>
+                        <p>от 8 999 рублей</p>
+                    </div>
+                </td>
+                <td>
+                    <div style="
+                        height: 250px;
+                        width: 300px;
+                        background: url('https://i.ibb.co/6RmP7kS/bg.png') no-repeat center/cover;
+                        display: table-cell;
+                        border-radius: 20px;
+                        overflow:hidden;
+                        padding: 0 10px;
+                        box-shadow: 1px 1px 10px #232323;
+                        vertical-align: middle;">
+                        <h1>Сайт-визитка</h1>
+                        <p>Пусть ваша компания создаст приятное первое впечатление с ваши будущими партнёрами</p>
+                        <p>от 18 999 рублей</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="
+                        height: 250px;
+                        width: 300px;
+                        background: url('https://i.ibb.co/6RmP7kS/bg.png') no-repeat center/cover;
+                        display: table-cell;
+                        border-radius: 20px;
+                        overflow:hidden;
+                        padding: 0 10px;
+                        box-shadow: 1px 1px 10px #232323;
+                        vertical-align: middle;">
+                        <h1>Админная панель (система управления контентом)</h1>
+                        <p>Замена типовых контентных панелей на собственную, спроектированную под ваши интересы и потребности</p>
+                        <p>от 28 999 рублей</p>
+                    </div>
+                </td>
+                <td>
+                    <div style="
+                        height: 250px;
+                        width: 300px;
+                        background: url('https://i.ibb.co/6RmP7kS/bg.png') no-repeat center/cover;
+                        display: table-cell;
+                        border-radius: 20px;
+                        overflow:hidden;
+                        padding: 0 10px;
+                        box-shadow: 1px 1px 10px #232323;
+                        vertical-align: middle;">
+                        <h1>Создание дизайна</h1>
+                        <p>Создаём визуальный интерфейс для демострации сильных сторон вашего бизнеса</p>
+                        <p>от 15 999 рублей</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-            <script>
-                const button = document.querySelector('#submit')
-                const form = document.querySelector('form')
-                function createForm() {
-                    const email = document.querySelector('#email').value
-                    const phone = document.querySelector('#phone').value
-                    const comment = document.querySelector('#comment').value
-                    return {
-                        email,
-                        phone,
-                        comment
-                    }
-                }
-                form.addEventListener('submit',(e) => {
-                    e.preventDefault()
-                    console.log(createForm())
-                })
-            </script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-        </body>
-        </html>
+    <div
+        style="
+        color: #fff;
+        background: #232323;
+        text-align: center;
+        padding: 30px 0;"
+    >
+        <h1 style="text-transform: uppercase;">Возникли вопросы и Вы хотите обсудить детали?</h1>
+        <h2 style="text-transform: uppercase;">Свяжитесь с нами любым удобным для Вас образом</h2>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 10px;">
+            <table style="border-spacing: 25px; width: 100%">
+                <tr>
+                    <td>
+                        <div
+                                style="
+                        width: 259px;
+                        background: transparent;
+                        border: 1px solid #FFFFFF;
+                        box-shadow: 1px 3px 10px #fff;
+                        padding: 10px;
+                        border-radius: 19px;"
+                        >
+                            <a href="tel:+79136746018" style="
+                        width: 100%;
+                        height: 100%;
+                        color: transparent;
+                        display: block;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div style="width: 24px; height: 100%; display: inline-block">
+                                                <img style="width: 100%; height: 100%" src="https://i.ibb.co/wSnsQQQ/phone.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p style="margin: 0;
+                                            display: inline-block;
+                                            font-size: 25px;
+                                            color: #fff;
+                                            margin-left: 20px;"
+                                            >+79136746018
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div
+                                style="
+                        width: 259px;
+                        background: transparent;
+                        border: 1px solid #FFFFFF;
+                        box-shadow: 1px 3px 10px #fff;
+                        padding: 10px;
+                        border-radius: 19px;"
+                        >
+                            <a href="https://web.telegram.org/z/" target="_blank" style="
+                        width: 100%;
+                        height: 100%;
+                        color: transparent;
+                        display: block;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div style="width: 24px; height: 100%; display: inline-block">
+                                                <img style="width: 100%; height: 100%" src="https://i.ibb.co/pRXZwK1/telegramm.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p style="margin: 0;
+                                            display: inline-block;
+                                            font-size: 25px;
+                                            color: #fff;
+                                            margin-left: 20px;"
+                                            >Мы в Телеграме
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div
+                                style="
+                        width: 259px;
+                        background: transparent;
+                        border: 1px solid #FFFFFF;
+                        box-shadow: 1px 3px 10px #fff;
+                        padding: 10px;
+                        border-radius: 19px;"
+                        >
+                            <a href="http://waffle-web.ru:3000" target="_blank" style="
+                        width: 100%;
+                        height: 100%;
+                        color: transparent;
+                        display: block;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div style="width: 24px; height: 100%; display: inline-block">
+                                                <img style="width: 100%; height: 100%" src="https://i.ibb.co/qMKdCxc/site.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p style="margin: 0;
+                                            display: inline-block;
+                                            font-size: 25px;
+                                            color: #fff;
+                                            margin-left: 20px;"
+                                            >Наш сайт
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <p style="color: rgba(255,255,255,0.41)">ИНН 5503181377
+                ОГРН 1185543015570 г. Омск, ул. Конева 32
+            </p>
+            <p style="color: rgba(255,255,255,0.41)">©2022-2023. Веб-студия «Waffle Web».
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
