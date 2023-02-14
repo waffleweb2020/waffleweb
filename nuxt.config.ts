@@ -3,6 +3,15 @@ import path from 'path'
 import fs from 'fs'
 export default defineNuxtConfig({
     ssr: true,
+    vite: {
+        server: {
+            hmr: {
+                protocol: "wss",
+                clientPort: 443,
+                path: "hmr/",
+            },
+        },
+    },
     css: [
         'assets/css/normalize.css',
         'assets/main.css',
@@ -14,7 +23,8 @@ export default defineNuxtConfig({
         https: {
             key: Buffer.from(fs.readFileSync(path.resolve(__dirname, 'host.key'))).toString(),
             cert: Buffer.from(fs.readFileSync(path.resolve(__dirname, 'host.cert'))).toString()
-        }
+        },
+        hmr
     },
     modules: ['nuxt-swiper'],
     app: {
