@@ -3,15 +3,6 @@ import path from 'path'
 import fs from 'fs'
 export default defineNuxtConfig({
     ssr: true,
-    vite: {
-        server: {
-            hmr: {
-                protocol: "wss",
-                clientPort: 443,
-                path: "hmr/",
-            },
-        },
-    },
     css: [
         'assets/css/normalize.css',
         'assets/main.css',
