@@ -15,7 +15,6 @@ export default defineNuxtConfig({
             key: Buffer.from(fs.readFileSync(path.resolve(__dirname, 'host.key'))).toString(),
             cert: Buffer.from(fs.readFileSync(path.resolve(__dirname, 'host.cert'))).toString()
         },
-        hmr
     },
     modules: ['nuxt-swiper'],
     app: {
