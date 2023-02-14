@@ -48,6 +48,9 @@
     position: absolute;
     bottom: 0;
     box-sizing: border-box;
+    @media screen and (max-width: 585px) {
+      width: 5%;
+    }
     &:before {
       content: '';
       display: block;

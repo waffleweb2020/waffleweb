@@ -27,7 +27,7 @@ const returnLetters = computed(() => letters.value.slice(0, props.index))
     height: 100%;
     top: 0;
     background: #100e0e;
-    z-index: 2;
+    z-index: 20;
     span {
       font-size: 48px;
       font-family: "Ubuntu";

@@ -33,5 +33,7 @@ onMounted(() => {
 <style lang="scss">
 .create {
   height: 100%;
+  position: relative;
+  z-index: 1;
 }
 </style>

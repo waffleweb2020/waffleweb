@@ -79,16 +79,21 @@ function toggleInput(title: string) {
 async function sendData() {
     await axios.post('https://www.api.waffle-web.ru/user', {
       name: name.value,
-      number: phone.value || '',
-      email: email.value || '',
+      number: phone.value || null,
+      email: email.value || null,
       comment: comment.value
     }).then(resp => {
       name.value = ''
       phone.value = ''
       email.value = ''
       comment.value = ''
+      errors.value = []
       success.value = 'Мы с Вами свяжемся в ближайшее время'
-    }).catch(e => {
+    }).then(() => {
+          setTimeout(()=>{
+            success.value = ''
+          }, 2000)
+        }).catch(e => {
       errors.value = [...e.response.data]
     }).finally(() => isLoading.value = false)
 }
@@ -103,6 +108,14 @@ function test(event) {
     height: 100%;
     padding: 80px;
     box-sizing: border-box;
+    @media screen and (max-width: 1024px){
+      padding: 80px 10px;
+    }
+    & .button {
+      @media screen and (max-width: 585px) {
+        justify-self: center !important;
+      }
+    }
     &:before {
       content: '';
       display: block;
@@ -123,6 +136,11 @@ function test(event) {
     overflow: hidden;
     position: relative;
     box-shadow: 1px 2px 10px #000;
+    @media screen and (max-width: 1024px) {
+      overflow: scroll;
+      grid-template-rows: 400px 400px;
+      grid-template-columns: 1fr;
+    }
     &:before {
       content: "КОНТАКТЫ";
       display: block;
@@ -135,6 +153,9 @@ function test(event) {
       font-family: "Ubuntu";
       bottom: -15%;
       line-height: 85%;
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
     }
   }
   .info {
@@ -165,6 +186,17 @@ function test(event) {
     width: 100%;
     font-size: 24px;
     color: #232323;
+    @media screen and (max-width: 1024px) {
+      grid-template-areas:
+        "f"
+        "l"
+        "t"
+        "t"
+        "t"
+        "t"
+        "b";
+      gap: 25px;
+    }
   }
   .input-wrap {
     position: relative;

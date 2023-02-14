@@ -35,6 +35,10 @@ const isBurgerActive = ref(false)
 </script>
 
 <style lang="scss" scoped>
+.header {
+  position: relative;
+  z-index: 2;
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -74,6 +78,7 @@ const isBurgerActive = ref(false)
     }
     &-item {
       font-family: 'Sofia Sans', sans-serif;
+      color: #fff;
     }
     @media screen and (max-width: 1024px) {
       position: fixed;
@@ -105,12 +110,12 @@ const isBurgerActive = ref(false)
     z-index: 10;
     display: none;
     @media screen and (max-width: 1024px) {
-      display: block;
+      display: flex;
     }
     span,&:after,&:before {
       display: block;
       height: 5px;
-      background: #fff;
+      background: #232323;
       border-radius: 2px;
       transition: 1s;
     }
@@ -131,6 +136,9 @@ const isBurgerActive = ref(false)
       span {
         opacity: 0;
       }
+      &:before, &:after {
+        background: #fff;
+      }
       &:before {
         top: 50%;
         transform: translate(-50%, -50%) rotate(135deg);
@@ -141,6 +149,12 @@ const isBurgerActive = ref(false)
         left: 50%;
         transform: translate(-50%, -50%) rotate(45deg);
       }
+    }
+  }
+
+  .toggle-button {
+    @media screen and (max-width: 1024px) {
+      display: none;
     }
   }
 </style>
