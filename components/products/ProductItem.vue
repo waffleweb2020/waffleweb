@@ -216,6 +216,7 @@ onBeforeUnmount(() => isOpened.value = false)
       box-sizing: border-box;
       position: relative;
       flex-shrink: 0;
+      color: #fff;
       &-pro {
         background-image: linear-gradient( #141414,  #141414), linear-gradient(180deg, #9E0674 0%, #007D85 100%);
       }

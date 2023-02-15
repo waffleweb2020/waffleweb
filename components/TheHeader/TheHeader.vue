@@ -8,7 +8,7 @@
       </div>
 
       <div :class="{'nav-active': isBurgerActive}" class="nav">
-        <ul class="nav-list">
+        <ul @click="isBurgerActive = !isBurgerActive" class="nav-list">
           <li class="nav-item"><nuxt-link to="/">Главная</nuxt-link></li>
           <li class="nav-item"><nuxt-link to="/about">О нас</nuxt-link></li>
           <li class="nav-item"><nuxt-link to="/create">Создаём</nuxt-link></li>

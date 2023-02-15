@@ -79,8 +79,8 @@ function toggleInput(title: string) {
 async function sendData() {
     await axios.post('https://www.api.waffle-web.ru/user', {
       name: name.value,
-      number: phone.value || null,
-      email: email.value || null,
+      number: phone.value || '',
+      email: email.value || '',
       comment: comment.value
     }).then(resp => {
       name.value = ''
