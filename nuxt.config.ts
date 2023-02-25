@@ -42,6 +42,7 @@ export default defineNuxtConfig({
                 { rel : "preconnect", href: "https://fonts.googleapis.com"},
                 { href: "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap", rel: "stylesheet" },
                 { href: "https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap", rel: "stylesheet" },
+                { rel: 'icon', type: 'image/x-icon', href: '/img/favicon.svg' }
             ],
         },
     },

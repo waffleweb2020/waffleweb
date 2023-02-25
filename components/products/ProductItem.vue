@@ -1,5 +1,9 @@
 <template>
-  <div @click="isOpened = true" :style="{gridArea: '_abcde'[item.id]}" class="card" >
+  <div
+      @click="isOpened = true"
+      :style="{gridArea: '_abcde'[item.id], animationDelay: `${item.id}00ms`}"
+      :class="{'card-show':isMounted }"
+      class="card" >
     <div class="title">{{item.title}}</div>
     <p class="subtitle">{{item.subtitle}}</p>
   </div>
@@ -94,10 +98,29 @@ const detailsDB = ref([
 
 const details = computed<{id: number, productId: number, plan: string, items: string[]}[]>(() => detailsDB.value.filter(detail => detail.productId === props.item.id))
 
+const isMounted = ref(false)
 onBeforeUnmount(() => isOpened.value = false)
+onMounted(() => isMounted.value = true)
 </script>
 
 <style lang="scss" scoped>
+  @keyframes show {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .card-show {
+    animation-name: show;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
   .card {
     border: 2px solid #4D0049;
     border-radius: 30px;
@@ -109,6 +132,9 @@ onBeforeUnmount(() => isOpened.value = false)
     overflow: hidden;
     transition: 1s;
     flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(-50%);
+    cursor: pointer;
     &:hover {
       transform: scale(1.15);
       z-index: 2;

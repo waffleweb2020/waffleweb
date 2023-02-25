@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div :class="{'contact-active': isMounted}" class="contact">
     <div class="container">
       <form @submit.prevent="sendData" class="form">
         <div class="info">
@@ -21,7 +21,7 @@
                 <UiInput v-model="phone" type="phone" name="phone" :placeholder="inputData.placeholder"/>
               </client-only>
 
-              <UiInput v-else v-model="email" type="text" name="email" :placeholder="inputData.placeholder"/>
+              <UiInput v-else v-model="phone" type="text" name="email" :placeholder="inputData.placeholder"/>
             </div>
 
             <textarea v-model="comment" placeholder="Введите ваш комментарий"></textarea>
@@ -80,7 +80,6 @@ async function sendData() {
     await axios.post('https://www.api.waffle-web.ru/user', {
       name: name.value,
       number: phone.value || '',
-      email: email.value || '',
       comment: comment.value
     }).then(resp => {
       name.value = ''
@@ -97,17 +96,40 @@ async function sendData() {
       errors.value = [...e.response.data]
     }).finally(() => isLoading.value = false)
 }
+
+const isMounted = ref(false)
+
+onMounted(() => {
+  isMounted.value = true
+})
 function test(event) {
   console.log(event)
 }
 </script>
 
 <style lang="scss" scoped>
+  @keyframes show {
+    0% {
+      opacity: 0;
+      transform: translateY(25%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .contact-active {
+    animation-name: show;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
   .contact {
     position: relative;
     height: 100%;
     padding: 80px;
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(-50%);
     @media screen and (max-width: 1024px){
       padding: 80px 10px;
     }

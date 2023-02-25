@@ -116,6 +116,7 @@ function touchMove(event) {
   }
   .title {
     position: relative;
+    animation-name: show;
     h1 {
       font-family: 'Ubuntu';
       font-style: normal;
@@ -185,8 +186,19 @@ function touchMove(event) {
     }
   }
   .active-title {
+
     &:after {
       width: 100%;
     }
   }
+  @keyframes show {
+    0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+}
 </style>

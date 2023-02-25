@@ -56,8 +56,6 @@
       }
     }
     .root {
-      border-left: 5px solid #fff;
-      border-right: 5px solid #fff;
       width: 10%;
       height: 50px;
       background: transparent;
@@ -70,7 +68,6 @@
         display: block;
         width: 250%;
         height: 5px;
-        background: #fff;
         position: absolute;
         top: 100%;
         left: 50%;

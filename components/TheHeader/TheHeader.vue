@@ -78,7 +78,7 @@ const isBurgerActive = ref(false)
     }
     &-item {
       font-family: 'Sofia Sans', sans-serif;
-      color: #fff;
+      color: inherit;
     }
     @media screen and (max-width: 1024px) {
       position: fixed;

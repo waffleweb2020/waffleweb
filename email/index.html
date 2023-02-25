@@ -183,19 +183,28 @@
             <table style="border-spacing: 25px; width: 100%">
                 <tr>
                     <td>
-                        <div
+                        <div onmouseenter="(function(e){
+                                    e.target.style.background='#fff'
+                                    e.target.style.color='#232323'
+                                }(window.event))"
+                             onmouseleave="(function(e){
+                                    e.target.style.background='transparent'
+                                    e.target.style.color='#fff'
+                                }(window.event))"
                                 style="
                         width: 259px;
                         background: transparent;
                         border: 1px solid #FFFFFF;
                         box-shadow: 1px 3px 10px #fff;
                         padding: 10px;
+                        color: #fff;
+                        transition: 1s;
                         border-radius: 19px;"
                         >
                             <a href="tel:+79136746018" style="
                         width: 100%;
                         height: 100%;
-                        color: transparent;
+                        color: inherit;
                         display: block;">
                                 <table>
                                     <tr>
@@ -208,7 +217,7 @@
                                             <p style="margin: 0;
                                             display: inline-block;
                                             font-size: 25px;
-                                            color: #fff;
+                                            color: inherit;
                                             margin-left: 20px;"
                                             >+79136746018
                                             </p>
@@ -220,19 +229,28 @@
                     </td>
 
                     <td>
-                        <div
+                        <div onmouseenter="(function(e){
+                        e.target.style.background='#fff'
+                        e.target.style.color='#232323'
+                        }(window.event))"
+                        onmouseleave="(function(e){
+                        e.target.style.background='transparent'
+                        e.target.style.color='#fff'
+                        }(window.event))"
                                 style="
                         width: 259px;
                         background: transparent;
                         border: 1px solid #FFFFFF;
                         box-shadow: 1px 3px 10px #fff;
                         padding: 10px;
+                        color: #fff;
+                        transition: 1s;
                         border-radius: 19px;"
                         >
                             <a href="https://web.telegram.org/z/" target="_blank" style="
                         width: 100%;
                         height: 100%;
-                        color: transparent;
+                        color: inherit;
                         display: block;">
                                 <table>
                                     <tr>
@@ -245,7 +263,7 @@
                                             <p style="margin: 0;
                                             display: inline-block;
                                             font-size: 25px;
-                                            color: #fff;
+                                            color: inherit;
                                             margin-left: 20px;"
                                             >Мы в Телеграме
                                             </p>
@@ -258,18 +276,27 @@
 
                     <td>
                         <div
+                                onmouseenter="(function(e){
+                                    e.target.style.background='#fff'
+                                    e.target.style.color='#232323'
+                                }(window.event))"
+                                onmouseleave="(function(e){
+                                    e.target.style.background='transparent'
+                                    e.target.style.color='#fff'
+                                }(window.event))"
                                 style="
                         width: 259px;
                         background: transparent;
                         border: 1px solid #FFFFFF;
                         box-shadow: 1px 3px 10px #fff;
                         padding: 10px;
+                        transition: 1s;
                         border-radius: 19px;"
                         >
                             <a href="http://waffle-web.ru:3000" target="_blank" style="
                         width: 100%;
                         height: 100%;
-                        color: transparent;
+                        color: inherit;
                         display: block;">
                                 <table>
                                     <tr>
@@ -282,7 +309,7 @@
                                             <p style="margin: 0;
                                             display: inline-block;
                                             font-size: 25px;
-                                            color: #fff;
+                                            color: inherit;
                                             margin-left: 20px;"
                                             >Наш сайт
                                             </p>
@@ -302,5 +329,21 @@
         </div>
     </div>
 </div>
+<script>
+    const socket = new WebSocket('ws://localhost:3000/')
+
+    socket.onopen = () => {
+        socket.send(JSON.stringify({id:1, method: 'send-id'}))
+    }
+
+    socket.onmessage = (event) => {
+        let msg = JSON.parse(event.data)
+        switch (msg.method) {
+            case "send-id":
+                console.log(`пользователь ${msg.username} присоединился`)
+                break
+        }
+    }
+</script>
 </body>
 </html>
