@@ -10,12 +10,6 @@ export default defineNuxtConfig({
     plugins: [
         'plugins/vue-the-mask.js'
     ],
-    devServer:{
-        https: {
-            key: Buffer.from(fs.readFileSync(path.resolve(__dirname, 'host.key'))).toString(),
-            cert: Buffer.from(fs.readFileSync(path.resolve(__dirname, 'host.cert'))).toString()
-        },
-    },
     modules: ['nuxt-swiper'],
     app: {
         pageTransition: { name: 'page', mode: 'in-out'},
