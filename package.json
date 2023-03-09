@@ -6,7 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-     "start": "export `cat env/.prod-env` && nuxt start",
+    "start": "nuxt start",
     "ypm2": "pm2 start --name 'waffleweb' 'yarn start' "
   },
   "devDependencies": {
